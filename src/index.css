@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input, textarea {
+  @apply focus-visible:outline-none;
+}
+
+.primary-btn {
+  @apply rounded-md bg-blue-900 ring-1 ring-blue-900 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-950 hover:ring-blue-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
+}
+
+.secondary-btn {
+  @apply rounded-md bg-white ring-1 ring-blue-900 px-2.5 py-1.5 text-sm font-semibold text-blue-900 shadow-sm hover:bg-blue-950 hover:ring-blue-950 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 focus-visible:text-white;
+}
