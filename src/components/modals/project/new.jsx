@@ -3,6 +3,7 @@ import { ArrowLongLeftIcon, ExclamationCircleIcon } from '@heroicons/react/20/so
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import Select from 'react-select'
+import Avatar from '../../utilities/avatar';
 
 export default function NewProject({open, setOpen}) {
 
@@ -38,7 +39,16 @@ export default function NewProject({open, setOpen}) {
     
         fetchUsers();
     }, [accessToken, org]);
-    const collabs = users?.map(user => ({ value: user.id, label: user.firstname + ' ' + user.lastname }))
+    const collabs = users?.map(user => (
+      { 
+        value: user.id, 
+        label: 
+          <div className="flex gap-x-4 items-center"> 
+            <Avatar user={user} size={'small'}/>
+            <p>{user.firstname} {user.lastname}</p>
+          </div>
+      }
+    ))
     const deptOptions = departments?.map(dept => ({
       value: dept.id,
       label: dept.name?.en
